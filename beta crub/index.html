@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renta de Carros</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Renta de Carros</h1>
+  </header>
+
+  <main>
+    <!-- Formulario para agregar carros -->
+    <section id="create-section">
+      <h2>Agregar Carro</h2>
+      <form id="create-form">
+        <input type="text" id="car-brand" placeholder="Marca del carro" required>
+        <input type="text" id="car-model" placeholder="Modelo del carro" required>
+        <input type="number" id="car-year" placeholder="Año del carro" required>
+        <input type="number" id="car-cost" placeholder="Costo de renta" required>
+        <input type="date" id="car-start-date" placeholder="Día de renta" required>
+        <input type="date" id="car-end-date" placeholder="Día de finalizar renta" required>
+        <select id="car-type" required>
+          <option value="" disabled selected>Selecciona el tipo</option>
+          <option value="deportivo">Deportivo</option>
+          <option value="camioneta">Camioneta</option>
+          <option value="suv">SUV</option>
+        </select>
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
+
+    <!-- Tabla de carros -->
+    <section id="cars-section">
+      <h2>Lista de Carros</h2>
+      
+      <!-- Filtros -->
+      <div id="filters">
+        <input type="text" id="search-brand" placeholder="Buscar por marca...">
+        <input type="text" id="search-model" placeholder="Buscar por modelo...">
+        <select id="filter-type">
+          <option value="">Todos los tipos</option>
+          <option value="deportivo">Deportivo</option>
+          <option value="camioneta">Camioneta</option>
+          <option value="suv">SUV</option>
+        </select>
+        <input type="number" id="filter-year" placeholder="Año del carro">
+        <input type="number" id="filter-min-price" placeholder="Precio mínimo">
+        <input type="number" id="filter-max-price" placeholder="Precio máximo">
+        <input type="date" id="filter-start-date" placeholder="Fecha de inicio">
+        <input type="date" id="filter-end-date" placeholder="Fecha de fin">
+        <button id="apply-filters">Aplicar Filtros</button>
+      </div>
+
+      <!-- Tabla de carros -->
+      <table id="cars-table">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Costo</th>
+            <th>Inicio de Renta</th>
+            <th>Fin de Renta</th>
+            <th>Días Restantes</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="cars-list">
+          <!-- Las filas de los carros se agregarán aquí dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal para editar carros -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Editar Carro</h2>
+      <form id="edit-form">
+        <input type="text" id="edit-car-brand" placeholder="Marca del carro" required>
+        <input type="text" id="edit-car-model" placeholder="Modelo del carro" required>
+        <input type="number" id="edit-car-year" placeholder="Año del carro" required>
+        <input type="number" id="edit-car-cost" placeholder="Costo de renta" required>
+        <input type="date" id="edit-car-start-date" placeholder="Día de renta" required>
+        <input type="date" id="edit-car-end-date" placeholder="Día de finalizar renta" required>
+        <select id="edit-car-type" required>
+          <option value="deportivo">Deportivo</option>
+          <option value="camioneta">Camioneta</option>
+          <option value="suv">SUV</option>
+        </select>
+        <button type="submit">Guardar Cambios</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 - Renta de Carros</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
